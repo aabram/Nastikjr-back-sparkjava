@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.eatmorepancakes</groupId>
-    <artifactId>Nastikjr-sparkjava</artifactId>
-    <version>1.0</version>
+    <artifactId>Nastikjr-back-sparkjava</artifactId>
+    <version>1.0.0</version>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/com.sparkjava/spark-core -->
