@@ -5,6 +5,8 @@ Nastik Jr is English-Estonian dictionary, new version of an old [service](https:
 
 Nastikjr-back-sparkjava is written in Java with [Spark Java](https://sparkjava.com/) (see Why? below) and contains only backend API server and database. There is React JS based frontend [available here](https://github.com/aabram/Nastikjr-front-reactjs), but you can write your own.
 
+Demo of front + back-end: http://nastik.eatmorepancakes.com/
+
 ## Requirements
 
 * Java version 11+
