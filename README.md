@@ -37,10 +37,10 @@ Server will start on port 9090, and API can be accessed on http://localhost:9090
 
 Only GET methods are available: 
 
-- /en/exact/{word}
-- /en/{word}
-- /en/exact/{word}
-- /et/{word}
+- /api/v1/en/exact/{word}
+- /api/v1/en/{word}
+- /api/v1/en/exact/{word}
+- /api/v1/et/{word}
 
 Response type is _application/json_.
 
@@ -59,7 +59,6 @@ List of notable limitations and things to be aware of.
 * No comprehensive input sanitization. May or may not fall over if you poke it hard enough.
 * [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) is enabled (for testing purposes and for public demo), so service may be exposed on the network or internet. 
 * No pagination, some queries return loads of matches.
-* No API versioning. Breaking changes may or may not be expected.
 
 ## Why?
 
