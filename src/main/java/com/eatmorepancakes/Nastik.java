@@ -2,8 +2,7 @@ package com.eatmorepancakes;
 
 import spark.Spark;
 
-import static spark.Spark.get;
-import static spark.Spark.port;
+import static spark.Spark.*;
 
 public class Nastik {
 
@@ -29,16 +28,21 @@ public class Nastik {
 
         Spark.before((request, response) -> response.header("Access-Control-Allow-Origin", "*"));
 
-        get("/en/:word", "application/json", (req, res) ->
+        get("/api/v1/en/:word", "application/json", (req, res) ->
                 WordService.getWordEN(req.params(":word")), new JsonTransformer());
 
-        get("/en/exact/:word", "application/json", (req, res) ->
+        get("/api/v1/en/exact/:word", "application/json", (req, res) ->
                 WordService.getExactWordEN(req.params(":word")), new JsonTransformer());
 
-        get("/et/:word", "application/json", (req, res) ->
+        get("/api/v1/et/:word", "application/json", (req, res) ->
                 WordService.getWordET(req.params(":word")), new JsonTransformer());
 
-        get("/et/exact/:word", "application/json", (req, res) ->
+        get("/api/v1/et/exact/:word", "application/json", (req, res) ->
                 WordService.getExactWordET(req.params(":word")), new JsonTransformer());
+
+        notFound((req, res) -> {
+            res.type("application/json");
+            return "{\"message\":\"Endpoint not available\"}";
+        });
     }
 }
