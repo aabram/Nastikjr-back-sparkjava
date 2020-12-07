@@ -34,11 +34,17 @@ public class Nastik {
         get("/api/v1/en/exact/:word", "application/json", (req, res) ->
                 WordService.getExactWordEN(req.params(":word")), new JsonTransformer());
 
-        get("/api/v1/et/:word", "application/json", (req, res) ->
+        get("/api/v1/et/:word", "text", (req, res) ->
                 WordService.getWordET(req.params(":word")), new JsonTransformer());
 
         get("/api/v1/et/exact/:word", "application/json", (req, res) ->
                 WordService.getExactWordET(req.params(":word")), new JsonTransformer());
+
+        // For checking whether service is alive
+        get("/api/v1/ping", (req, res) -> {
+                    res.type("application/json");
+                    return "{\"message\":\"It's alive!\"}";
+                });
 
         notFound((req, res) -> {
             res.type("application/json");
